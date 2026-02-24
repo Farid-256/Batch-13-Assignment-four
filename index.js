@@ -8,17 +8,21 @@ let rejectedCount = document.getElementById('rejectedCount')
 const allCardSection = document.getElementById('allCards')
 const filteredSection = document.getElementById('filtered-section')
 const mainContainer = document.querySelector('main')
+let availableCount = document.getElementById('availableCount')
 
 let currentTab = "all"
 
 function calculateCount() {
-    total.innerText = allCardSection.querySelectorAll('.card').length
+    const totalCards = allCardSection.querySelectorAll('.card').length
+
+    total.innerText = totalCards
+    availableCount.innerText = totalCards
     interviewCount.innerText = interviewList.length
     rejectedCount.innerText = rejectedList.length
 }
 calculateCount()
 
-// ---------- TAB SWITCH ----------
+
 function toggleStyle(clickedBtn) {
 
     const buttons = document.querySelectorAll('.filter-btn')
@@ -45,7 +49,7 @@ function toggleStyle(clickedBtn) {
     }
 }
 
-// ---------- MAIN EVENT ----------
+
 mainContainer.addEventListener('click', function (event) {
 
     // Interview Click
@@ -68,7 +72,7 @@ mainContainer.addEventListener('click', function (event) {
         calculateCount()
     }
 
-    // Rejected Click
+
     if (event.target.classList.contains('rejected-btn')) {
         const card = event.target.closest('.card')
         const jobName = card.querySelector('.jobsName').innerText
@@ -87,7 +91,7 @@ mainContainer.addEventListener('click', function (event) {
         calculateCount()
     }
 
-    // Delete Click
+
     if (event.target.classList.contains('fa-trash-can')) {
         const card = event.target.closest('.card')
         const jobName = card.querySelector('.jobsName').innerText
@@ -102,7 +106,7 @@ mainContainer.addEventListener('click', function (event) {
     }
 })
 
-// ---------- RENDER FILTER ----------
+
 function renderFiltered() {
 
     filteredSection.innerHTML = ''
