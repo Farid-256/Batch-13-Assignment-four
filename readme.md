@@ -13,3 +13,9 @@ document.body.appendChild(el);
 
 3. What is Event Bubbling? And how does it work?
 Ans: Event goes child → parent → document. Example: click on <button> also triggers <div> and <body> handlers unless stopped.
+
+4. What is Event Delegation in JavaScript? Why is it useful?
+Ans: Attach listener to parent, handle child events via event.target.
+ Fewer listeners
+ Works for dynamic elements
+ Cleaner code
