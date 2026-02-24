@@ -1,3 +1,4 @@
+
 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 Ans: getElementById, getElementsByClassName and querySelector / querySelectorAll
 getElementById("id")  single element by ID.
@@ -19,3 +20,7 @@ Ans: Attach listener to parent, handle child events via event.target.
  Fewer listeners
  Works for dynamic elements
  Cleaner code
+
+5. What is the difference between preventDefault() and stopPropagation() methods?
+Ans: preventDefault() → stops browser’s default action (e.g. link navigation, form submit).
+     stopPropagation() → stops event from bubbling up to parent elements.
